@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 import './MovieList.css'
@@ -13,10 +13,6 @@ function MovieList() {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
-    const movieDescription = () => {
-        history.push(`/Details`);
-    }
-
     return (
         <main>
             <h1>MovieList</h1>
@@ -28,8 +24,19 @@ function MovieList() {
                             <img
                             src={movie.poster}
                             alt={movie.title}
-                            onClick={movieDescription}
-                            details={details}/>
+                            onClick={() => {
+                                console.log(movie.id);
+                                dispatch({
+                                    type: 'FETCH_MOVIE',
+                                    payload: movie.id
+                                })
+                                dispatch({
+                                    type: 'FETCH_GENRES',
+                                    payload: movie.id
+                                })
+                                history.push(`/Details`);
+                            }
+                            }/>
                         </div>
                     );
                 })}

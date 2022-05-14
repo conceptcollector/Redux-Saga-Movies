@@ -6,7 +6,7 @@ import Details from '../Details/Details.jsx';
 function App() {
   return (
     <div className="App">
-      <h1>The Movies Saga!</h1>
+    <h1>Let's All Go to the Movies</h1>
       <Router>        
         <Route exact path="/">
           <MovieList />
