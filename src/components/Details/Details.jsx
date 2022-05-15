@@ -1,5 +1,8 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import './Details.css';
+import Button from '@material-ui/core/Button';
+import {useHistory} from 'react-router-dom';
 
 function Details() {
 
@@ -8,12 +11,18 @@ function Details() {
         dispatch({type: 'FETCH_GENRES'})
     }, []);
 
+    const history = useHistory();
     const dispatch = useDispatch();
     const movie = useSelector(store => store.movie);
     const genres = useSelector(store => store.genres);
 
     return (
-        <>
+        <div className='movie-details'>
+            {genres && genres.map((genre) => {
+                return (
+                <h4 >{genre.name}</h4>
+                )
+            })}
             {movie && movie.map((movie) => {
                 return (
                     <div key={movie.id}>
@@ -22,12 +31,16 @@ function Details() {
                         <p>{movie.description}</p>
                     </div>
                 )})}
-            {genres && genres.map((genre) => {
-                return (
-                <h4 >{genre.name}</h4>
-                )
-            })}
-        </>
+            
+            <Button
+            variant="contained"
+            color='primary'
+            onClick={() => {
+                history.push(`/`);
+            }}>
+                Let's all go to the lobby
+            </Button>
+        </div>
     )
 }
 

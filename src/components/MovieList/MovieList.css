@@ -1,4 +1,13 @@
 .movies {
     display : flex;
     flex-wrap: wrap;
+    color: gold;
+}
+
+h3 {
+    margin: 10px;
+}
+
+img {
+    margin: 10px;
 }

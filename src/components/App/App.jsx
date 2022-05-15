@@ -2,22 +2,38 @@ import {HashRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 import MovieList from '../MovieList/MovieList.jsx';
 import Details from '../Details/Details.jsx';
+import {createMuiTheme, ThemeProvider} from '@material-ui/core';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#FF0000'
+    },
+    secondary: {
+      main: '#FFD700'
+    }
+  }
+});
 
 function App() {
   return (
-    <div className="App">
-    <h1>Let's All Go to the Movies</h1>
-      <Router>        
-        <Route exact path="/">
-          <MovieList />
-        </Route>
-        <Route>
-        {/* Details page */}
-          <Details />
-        </Route>
-        {/* Add Movie page */}
-      </Router>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <header>
+          <h1>Hooray for Hollywood</h1>
+        </header>
+        <Router>        
+          <Route exact path="/">
+            <MovieList />
+          </Route>
+          <Route exact path="/Details">
+          {/* Details page */}
+            <Details />
+          </Route>
+          {/* Add Movie page */}
+        </Router>
+      </div>
+   </ThemeProvider>
   );
 }
 
