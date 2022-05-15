@@ -20,7 +20,7 @@ function Details() {
         <div className='movie-details'>
             {genres && genres.map((genre) => {
                 return (
-                <h4 >{genre.name}</h4>
+                <h6 key={genre.id}>{genre.name}</h6>
                 )
             })}
             {movie && movie.map((movie) => {
@@ -34,7 +34,7 @@ function Details() {
             
             <Button
             variant="contained"
-            color='primary'
+            color="primary"
             onClick={() => {
                 history.push(`/`);
             }}>

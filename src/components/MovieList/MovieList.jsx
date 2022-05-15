@@ -1,6 +1,7 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
+import Grid from '@material-ui/core/Grid';
 import './MovieList.css'
 
 function MovieList() {
@@ -16,9 +17,12 @@ function MovieList() {
     return (
         <main>
             <section className="movies">
+                <Grid container>
                 {movies.map(movie => {
                     return (
-                        <div key={movie.id} >
+                        <Grid
+                            item xs={12} sm={6} md={4} lg={3}
+                            key={movie.id} >
                             <h3>{movie.title}</h3>
                             <img
                             src={movie.poster}
@@ -36,9 +40,10 @@ function MovieList() {
                                 history.push(`/Details`);
                             }
                             }/>
-                        </div>
+                        </Grid>
                     );
                 })}
+                </Grid>
             </section>
         </main>
 

@@ -8,9 +8,6 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       main: '#FF0000'
-    },
-    secondary: {
-      main: '#FFD700'
     }
   }
 });
@@ -20,7 +17,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="App">
         <header>
-          <h1>Hooray for Hollywood</h1>
+          <h1>🎬 🎥 Hooray for Hollywood 🎞 🍿</h1>
         </header>
         <Router>        
           <Route exact path="/">

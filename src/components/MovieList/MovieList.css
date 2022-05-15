@@ -1,7 +1,7 @@
 .movies {
-    display : flex;
-    flex-wrap: wrap;
-    color: gold;
+    background: rgb(0,255,0);
+    background: linear-gradient(0deg, rgba(0,255,0,1) 0%, rgba(255,215,0,1) 100%);
+    color: #0000ff;
 }
 
 h3 {
