@@ -1,9 +1,10 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# Sagas-Movies
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This was built in just over two days time.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+Sagas-Movies was a the final weekend assignment during Tier 2 at Prime Digital Academy. It is a movie management application.
+
+## Screen Shot
+
